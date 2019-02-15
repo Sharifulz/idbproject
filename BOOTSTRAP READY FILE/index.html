@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>JavaScript Validation</title>
+    <link rel="shortcut icon" type="image/png" href="img/check.png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="bootbox.min.js"></script>
+    <script type="text/javascript" src="myform.js"></script>
+
+  </head>
+  <body>
+    <!-- **************************Navigation Bar STARTS here*************************-->
+    <div class="row">
+      <div class="col-md-4 navbar-primary bg-primary"></div>
+      <div class="col-md-4 navbar-primary bg-primary">
+        <nav class="navbar-primary bg-primary">
+          <center>
+          <h2 class="text-center text-light" href="#">JAVASCRIPT FORM VALIDATION WITH BOOTSTRAP</h2>
+          </center>
+        </nav>
+      </div>
+      <div class="col-md-4 navbar-primary bg-primary"></div>
+    </div>
+    <!-- **************************Navigation Bar ENDS here*************************-->
+    <br>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-3">
+        <div class="card" style="width: 18rem;">
+          <img src="img/login.png" class="card-img-top" alt="" style="margin-top: 10px">
+          <div class="card-body">
+            <a href="#" class="btn btn-warning btn-block" data-target="#mymodal" data-toggle="modal">Log In</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card" style="width: 18rem;">
+          <img src="img/user.png" class="card-img-top" alt="" style="margin-top: 10px">
+          <div class="card-body">
+            <a href="#" class="btn btn-warning btn-block" data-target="#mymodal2" data-toggle="modal">Sign Up</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+    
+    <!-- **************************MODAL STARTS*************************-->
+<div class="modal" id="mymodal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="text-primary" style="margin-left: 180px;">Log In</h3>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <!--FORMS*******************-->
+            <form action="" method="post">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <!--EMAILS*******************-->
+                <input type="text" name="email" class="form-control" id="emailAddress" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <!--PASS*******************-->
+                <input type="password" name="pass" class="form-control" id="passWord" placeholder="Password">
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+              </div>
+              <input type="submit" name="submit" value="Submit" data-dismiss="modal" class="btn btn-primary btn-block" onclick="validateForm()"/>
+              <input type="reset" name="reset" value="Clear" class="btn btn-danger btn-block">
+                </form>
+            </div>
+          
+        </div>
+        
+      </div>
+    </div>
+    
+
+  <!-- **************************MODAL STARTS 2*************************-->
+  <div class="modal" id="mymodal2">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="text-primary" style="margin-left: 180px;">Sign Up Form</h3>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <!--FORMS*******************-->
+          <form action="" method="post" onsubmit="">
+            <div class="form-group">
+              <!--  Names *******************-->
+              <label for="exampleInputEmail1">Name</label>
+              <input type="text" name="name" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter Name">
+            </div>
+            <div id="msg1" class="text-danger"></div>
+            
+            <div class="form-group">
+              <!--  Emails  *******************-->
+              <label for="exampleInputEmail1">Email Address</label>
+              <input type="text" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div id="msg2" class="text-danger"></div>
+            
+            <div class="form-group">
+              <!--  Emails  *******************-->
+              <label for="exampleInputEmail1">Contact Number</label>
+              <input type="text" name="contact" class="form-control" id="contact" aria-describedby="emailHelp" placeholder="Enter Cell Number">
+            </div>
+            <div id="msg3" class="text-danger"></div>
+            <br>
+            <div class="form-group">
+              <!--  Gender  *******************-->
+              <div class="row">
+                <div class="col-md-4">
+                  <label for="exampleInputEmail1">Gender</label>
+                </div>
+                <div class="col-md-4">
+                  <input type="radio" class="btn btn-primary" name="gen" value="FEMALE">   FEMALE
+                </div>
+                <div class="col-md-4">
+                  <input type="radio" name="gen" value="MALE" class="btn btn-primary">   MALE
+                </div>
+              </div>
+            </div>
+            <br>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-4">
+                  <label for="exampleInputEmail1">Education   </label>
+                </div>
+                <div class="col-md-2">
+                  
+                  <input type="checkbox" name="skill" value="SSC">   SSC
+                </div>
+                <div class="col-md-2">
+                  <input type="checkbox" name="skill" value="HSC">   HSC
+                </div>
+                <div class="col-md-2">
+                  <input type="checkbox" name="skill" value="BSc">   BSc
+                </div>
+                <div class="col-md-2">
+                  <input type="checkbox" name="skill" value="MSc">   MSc
+                </div>
+              </div>
+            </div>
+            
+            
+            <div class="form-group">
+              <!--  Emails  *******************-->
+              <label for="exampleInputEmail1">Date Of Birth</label>
+              <div class="row">
+                <div class="col-md-4">
+                  <select title="Pick a number" class="form-control selectpicker" id="dob1">
+                    <option>   Month</option>
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                  </select>
+                </div>
+                
+                <div class="col-md-4">
+                  <select title="Pick a number" class="form-control selectpicker" id="dob2">
+                    <option>  Day</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                  </select>
+                </div>
+                
+                <div class="col-md-4">
+                  <select title="Pick a number" class="form-control selectpicker" id="dob3">
+                    <option>  Year</option>
+                    <option value="1990">1990</option>
+                    <option value="1991">1991</option>
+                    <option value="1992">1992</option>
+                    <option value="1993">1993</option>
+                    <option value="1994">1994</option>
+                    <option value="1995">1995</option>
+                    <option value="1996">1996</option>
+                    <option value="1997">1997</option>
+                    <option value="1998">1998</option>
+                    <option value="1999">1999</option>
+                    <option value="2000">2000</option>
+                    <option value="2001">2001</option>
+                    <option value="2002">2002</option>
+                    <option value="2003">2003</option>
+                    <option value="2004">2004</option>
+                    <option value="2005">2005</option>
+                    <option value="2006">2006</option>
+                    <option value="2007">2007</option>
+                    <option value="2008">2008</option>
+                    <option value="2009">2009</option>
+                    <option value="2010">2010</option>
+                  </select>
+                </div>
+                
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <!--PASS*******************-->
+              <input type="password" name="pass" class="form-control" id="passw" placeholder="Password">
+            </div>
+            <div id="msg" class="text-danger">Fill Up All the Form Carefully</div>
+           <input type="submit" name="submit" value="Submit" data-dismiss="modal" class="btn btn-primary btn-block" onclick="validateSignForm()"/>
+            <input type="reset" name="reset" value="Clear" class="btn btn-danger btn-block">
+        </form>
+      </div>
+      
+    </div>
+  </div>
+
+      </div>
+  <!-- Last FOOTER-->
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-md-3"></div>
+<div class="col-md-6">
+  <div class="jumbotron">
+  <h1 class="display-4 text-center">Shariful Islam</h1>
+  
+  <hr class="my-4">
+  <h6 class="display-8 text-center">BSc Hons(Mathematics)</h6>
+  <h6 class="display-8 text-center">Trainee: IDB-BISEW</h6>
+  <h6 class="display-8 text-center">Course: Enterprise Systems Analysis & Design-J2EE</h6>
+  <p class="lead">
+    <a class="btn btn-primary btn-block" href="#" role="button">Learn more</a>
+  </p>
+</div>
+</div>
+<div class="col-md-3"></div>
+  </div>
+   
+<input type="submit"  value="Submition" onclick="validateSignForm()">
+   
+   
+   <script type="text/javascript">
+    /*var emails = document.getElementById('email').value;*/
+
+    /*////////////Event Click For Name Field///////////////*/
+   document.querySelector('#email').addEventListener('click',()=>{
+
+    if (document.getElementById('name').value=="") {
+      document.getElementById("msg1").innerHTML = "Please Enter Your Name..";
+      document.getElementById("name").style.borderColor = "red";
+    }else{
+      document.getElementById("msg1").innerHTML = "";
+      document.getElementById("name").style.borderColor = "white";
+    }
+   })
+
+   /*////////////Event Click For Email Field///////////////*/
+   document.querySelector('#contact').addEventListener('click',()=>{
+
+    if (document.getElementById('email').value=="") {
+      document.getElementById("msg2").innerHTML = "Please Enter Your Email..";
+      document.getElementById("email").style.borderColor = "red";
+    }else{
+      document.getElementById("msg2").innerHTML = "";
+      document.getElementById("email").style.borderColor = "white";
+    }
+   })
+
+   /*////////////Event Click For Contacts Field///////////////*/
+   document.querySelector('#passw').addEventListener('click',()=>{
+
+    if (document.getElementById('contact').value=="") {
+      document.getElementById("msg3").innerHTML = "Please Enter Your Contacts..";
+      document.getElementById("contact").style.borderColor = "red";
+    }else{
+      document.getElementById("msg3").innerHTML = "";
+      document.getElementById("contact").style.borderColor = "white";
+    }
+   })
+    </script>
+     
+</body>
+</html>
+<!--
+<div class="modal-footer">
+<button class="btn btn-danger" data-dismiss="modal">LogIn</button>
+</div>
+-->
